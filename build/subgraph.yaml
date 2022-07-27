@@ -1,0 +1,25 @@
+specVersion: 0.0.5
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: UniswapV3USDCETHPool
+    network: mainnet
+    source:
+      address: "0x8ad599c3A0ff1De082011EFDDc58f1908eb6e6D8"
+      abi: USDCETHPool
+      startBlock: 12369500
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Pool
+        - Swap
+      abis:
+        - name: USDCETHPool
+          file: UniswapV3USDCETHPool/abis/USDCETHPool.json
+      eventHandlers:
+        - event: Swap(indexed address,indexed address,int256,int256,uint160,uint128,int24)
+          handler: handleSwap
+      file: UniswapV3USDCETHPool/UniswapV3USDCETHPool.wasm
