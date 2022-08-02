@@ -3,19 +3,6 @@ type Pool @entity {
   id: ID!
   #total swap transactions for this pool
   count: BigInt!
-  #pool address
-  address: Bytes!
-  #token pair
-  token0: Bytes!
-  token1: Bytes!
-  #fee tier of the pool
-  feeTier: Int!
-  #tick spacing of the pool
-  tickSpacing: Int!
-  #timestamp when the pool is created
-  createdAt: BigInt!
-  #swap events for this pool
-  swap: [SwapData!]! 
 }
 
 type SwapData @entity {
@@ -31,13 +18,10 @@ type SwapData @entity {
   sqrtPriceX96: BigInt!
   #tick at the timestamp
   tick: BigInt!
-  #cumulative ticks (tick_i * (time_i+1 - time_i)) for previous event
-  # cumulativeTicks: BigInt!
   #timestamp of the transaction
   timestamp: BigInt!
   #blocknumber where the transaction is emitted
   blockNumber: BigInt!
   #liquidity
   liquidity: BigInt!
-  # pool: [Pool!]! @derivedFrom(field: "swap")
 }

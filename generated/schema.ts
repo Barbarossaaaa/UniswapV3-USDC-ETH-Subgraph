@@ -50,69 +50,6 @@ export class Pool extends Entity {
   set count(value: BigInt) {
     this.set("count", Value.fromBigInt(value));
   }
-
-  get address(): Bytes {
-    let value = this.get("address");
-    return value!.toBytes();
-  }
-
-  set address(value: Bytes) {
-    this.set("address", Value.fromBytes(value));
-  }
-
-  get token0(): Bytes {
-    let value = this.get("token0");
-    return value!.toBytes();
-  }
-
-  set token0(value: Bytes) {
-    this.set("token0", Value.fromBytes(value));
-  }
-
-  get token1(): Bytes {
-    let value = this.get("token1");
-    return value!.toBytes();
-  }
-
-  set token1(value: Bytes) {
-    this.set("token1", Value.fromBytes(value));
-  }
-
-  get feeTier(): i32 {
-    let value = this.get("feeTier");
-    return value!.toI32();
-  }
-
-  set feeTier(value: i32) {
-    this.set("feeTier", Value.fromI32(value));
-  }
-
-  get tickSpacing(): i32 {
-    let value = this.get("tickSpacing");
-    return value!.toI32();
-  }
-
-  set tickSpacing(value: i32) {
-    this.set("tickSpacing", Value.fromI32(value));
-  }
-
-  get createdAt(): BigInt {
-    let value = this.get("createdAt");
-    return value!.toBigInt();
-  }
-
-  set createdAt(value: BigInt) {
-    this.set("createdAt", Value.fromBigInt(value));
-  }
-
-  get swap(): Array<string> {
-    let value = this.get("swap");
-    return value!.toStringArray();
-  }
-
-  set swap(value: Array<string>) {
-    this.set("swap", Value.fromStringArray(value));
-  }
 }
 
 export class SwapData extends Entity {

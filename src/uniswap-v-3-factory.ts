@@ -6,13 +6,6 @@ export function createOrLoadPool(id: string): Pool {
   if (pool == null) {
     pool = new Pool(id);
     pool.count = BigInt.fromI32(0);
-    pool.address = new Address(0);
-    pool.token0 = new Address(0);
-    pool.token1 = new Address(0);
-    pool.feeTier = 0;
-    pool.tickSpacing = 0;
-    pool.createdAt = BigInt.fromI32(0);
-    pool.swap = new Array();
   }
   return pool;
 }
